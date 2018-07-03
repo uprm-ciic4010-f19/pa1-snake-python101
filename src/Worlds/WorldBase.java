@@ -6,7 +6,8 @@ import Game.Entities.Static.Apple;
 import Main.Handler;
 
 import java.awt.*;
-import java.util.*;
+import java.util.LinkedList;
+
 
 /**
  * Created by AlexVR on 7/2/2018.
@@ -25,6 +26,7 @@ public abstract class WorldBase {
     public Player player;
 
     protected Handler handler;
+
 
     public Boolean appleOnBoard;
     protected Apple apple;

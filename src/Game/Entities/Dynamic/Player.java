@@ -23,10 +23,10 @@ public class Player {
 
     public Player(Handler handler){
         this.handler = handler;
-        xCoord = handler.getWorld().GridWidthHeightPixelCount/2;
-        yCoord = handler.getWorld().GridWidthHeightPixelCount/2;
+        xCoord = 0;
+        yCoord = 0;
         moveCounter = 0;
-        direction= "Up";
+        direction= "Right";
         justAte = false;
         lenght= 1;
 
@@ -35,6 +35,8 @@ public class Player {
     public void tick(){
         moveCounter++;
         if(moveCounter>=5) {
+            System.out.println(xCoord+" , "+yCoord);
+            System.out.println(handler.getWorld().GridWidthHeightPixelCount-1);
             checkCollisionAndMove();
             moveCounter=0;
         }

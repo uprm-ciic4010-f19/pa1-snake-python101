@@ -1,8 +1,6 @@
 package Game.Entities.Static;
 
-import Game.Entities.Dynamic.Player;
 import Main.Handler;
-import Worlds.WorldBase;
 
 /**
  * Created by AlexVR on 7/2/2018.

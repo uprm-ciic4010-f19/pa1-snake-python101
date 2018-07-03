@@ -1,6 +1,5 @@
 package Game.Entities.Dynamic;
 
-import Game.Entities.Static.Apple;
 import Main.Handler;
 
 import java.awt.*;
@@ -97,16 +96,7 @@ public class Player {
             handler.getWorld().body.removeLast();
             handler.getWorld().body.addFirst(new Tail(x, y,handler));
         }
-        /////DEBUG
-//        if(lenght!= 0) {
-//            if (handler.getWorld().body.size() == 0) {
-//                Eat();
-//            } else if (handler.getWorld().body.size() == 1) {
-//                Eat();
-//            } else if (handler.getWorld().body.size() == 2) {
-//                Eat();
-//            }
-//        }
+
     }
 
     public void render(Graphics g,Boolean[][] playeLocation){

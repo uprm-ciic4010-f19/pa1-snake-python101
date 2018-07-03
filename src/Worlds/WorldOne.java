@@ -1,6 +1,5 @@
 package Worlds;
 
-import Game.Entities.Dynamic.Player;
 import Game.Entities.Static.Apple;
 import Main.Handler;
 
@@ -14,7 +13,7 @@ public class WorldOne extends WorldBase{
 
     public WorldOne (Handler handler) {
         super(handler);
-        GridWidthHeightPixelCount = 50;
+        GridWidthHeightPixelCount = 45;
         GridPixelsize= (800/GridWidthHeightPixelCount);
         playerLocation = new Boolean[GridWidthHeightPixelCount][GridWidthHeightPixelCount];
         appleLocation = new Boolean[GridWidthHeightPixelCount][GridWidthHeightPixelCount];

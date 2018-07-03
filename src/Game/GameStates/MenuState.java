@@ -43,7 +43,7 @@ public class MenuState extends State {
     public void render(Graphics g) {
         g.setColor(Color.darkGray);
         g.fillRect(0,0,handler.getWidth(),handler.getHeight());
-        g.drawImage(Images.title,0,0,600,800,null);
+        g.drawImage(Images.title,0,0,handler.getWidth(),handler.getHeight(),null);
         uiManager.Render(g);
 
     }

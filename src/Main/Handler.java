@@ -2,6 +2,7 @@ package Main;
 
 import Input.KeyManager;
 import Input.MouseManager;
+import Worlds.WorldBase;
 
 
 /**
@@ -11,6 +12,7 @@ import Input.MouseManager;
 public class Handler {
 
     private GameSetUp game;
+    private WorldBase world;
 
     public Handler(GameSetUp game){
         this.game = game;
@@ -38,6 +40,14 @@ public class Handler {
 
     public MouseManager getMouseManager(){
         return game.getMouseManager();
+    }
+
+    public WorldBase getWorld() {
+        return world;
+    }
+
+    public void setWorld(WorldBase world) {
+        this.world = world;
     }
 
 

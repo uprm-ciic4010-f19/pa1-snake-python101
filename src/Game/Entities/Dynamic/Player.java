@@ -4,6 +4,7 @@ import Main.Handler;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.Random;
 
 /**
  * Created by AlexVR on 7/2/2018.
@@ -35,8 +36,6 @@ public class Player {
     public void tick(){
         moveCounter++;
         if(moveCounter>=5) {
-            System.out.println(xCoord+" , "+yCoord);
-            System.out.println(handler.getWorld().GridWidthHeightPixelCount-1);
             checkCollisionAndMove();
             moveCounter=0;
         }
@@ -102,9 +101,10 @@ public class Player {
     }
 
     public void render(Graphics g,Boolean[][] playeLocation){
-
+        Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
+                g.setColor(new Color(r.nextInt(250), r.nextInt(250), r.nextInt(250)));
 
                 if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
                     g.fillRect((i*handler.getWorld().GridPixelsize),
@@ -207,7 +207,7 @@ public class Player {
                             tail=(new Tail(this.xCoord-1,this.yCoord,handler));
                         }else{
                             tail=(new Tail(this.xCoord+1,this.yCoord,handler));
-                        }
+                        } System.out.println("Tu biscochito");
                     }
                 }else{
                     if(handler.getWorld().body.getLast().y!=0){

@@ -20,7 +20,7 @@ public class Player {
 
     public int moveCounter;
 
-    public String direction;
+    public String direction;//is your first name one?
 
     public Player(Handler handler){
         this.handler = handler;

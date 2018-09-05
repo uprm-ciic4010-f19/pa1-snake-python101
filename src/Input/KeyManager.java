@@ -12,8 +12,6 @@ public class KeyManager implements KeyListener {
 
 	private boolean[] keys,justPressed,cantPress;
 	public boolean up=false, down=false, left=false, right=false;
-	public boolean attbut=false;
-	public boolean fattbut=false;
 	public boolean pbutt=false;
 
 
@@ -44,8 +42,6 @@ public class KeyManager implements KeyListener {
 		left = keys[KeyEvent.VK_A];
 		right = keys[KeyEvent.VK_D];
 
-		attbut = keys[KeyEvent.VK_E];
-		fattbut = keys[KeyEvent.VK_C];
 		pbutt = keys[KeyEvent.VK_ESCAPE];
 
 	}

@@ -7,6 +7,7 @@ import Worlds.WorldBase;
 
 /**
  * Created by AlexVR on 7/1/2018.
+ * Made by the people, for the people...
  */
 
 public class Handler {

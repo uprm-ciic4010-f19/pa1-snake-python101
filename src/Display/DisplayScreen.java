@@ -26,7 +26,7 @@ public class DisplayScreen {
 
         createDisplay();
     }
-
+    Color purpleC = new Color(128, 0, 128);
     private void createDisplay(){
         frame = new JFrame(title);
         frame.setSize(width, height);
@@ -34,20 +34,20 @@ public class DisplayScreen {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        frame.setBackground(Color.MAGENTA);
+        frame.setBackground(purpleC);
 
         try {
             frame.setIconImage(ImageIO.read(new File("res/Sheets/icon.png")));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+       
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width, height));
         canvas.setMaximumSize(new Dimension(width, height));
         canvas.setMinimumSize(new Dimension(width, height));
         canvas.setFocusable(false);
-        canvas.setBackground(Color.MAGENTA);
+        canvas.setBackground(purpleC);
 
         frame.add(canvas);
         frame.pack();

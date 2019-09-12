@@ -15,8 +15,8 @@ public class WorldOne extends WorldBase{
         super(handler);
 
         //has to be a number bigger than 20 and even
-        GridWidthHeightPixelCount = 40;
-        GridPixelsize = (800/GridWidthHeightPixelCount);
+        GridWidthHeightPixelCount = 60;
+        GridPixelsize = (780/GridWidthHeightPixelCount);
         playerLocation = new Boolean[GridWidthHeightPixelCount][GridWidthHeightPixelCount];
         appleLocation = new Boolean[GridWidthHeightPixelCount][GridWidthHeightPixelCount];
 

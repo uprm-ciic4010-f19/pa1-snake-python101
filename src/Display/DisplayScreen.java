@@ -34,7 +34,7 @@ public class DisplayScreen {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        frame.setBackground(Color.black);
+        frame.setBackground(Color.MAGENTA);
 
         try {
             frame.setIconImage(ImageIO.read(new File("res/Sheets/icon.png")));
@@ -47,7 +47,7 @@ public class DisplayScreen {
         canvas.setMaximumSize(new Dimension(width, height));
         canvas.setMinimumSize(new Dimension(width, height));
         canvas.setFocusable(false);
-        canvas.setBackground(Color.black);
+        canvas.setBackground(Color.MAGENTA);
 
         frame.add(canvas);
         frame.pack();

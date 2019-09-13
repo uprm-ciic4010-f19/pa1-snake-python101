@@ -54,6 +54,10 @@ public class Player {
 		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)) {
 			i -- ;
 		}
+		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) {
+			lenght++;
+			handler.getWorld().body.addLast(new Tail(xCoord, yCoord, handler));
+		}
 	}
 
 
@@ -127,10 +131,11 @@ public class Player {
 	}
 
 	public void Eat(){
-		lenght++;
 		Tail tail= null;
+		lenght ++;
 		handler.getWorld().appleLocation[xCoord][yCoord]=false;
 		handler.getWorld().appleOnBoard=false;
+		
 		switch (direction){
 		case "Left":
 			if( handler.getWorld().body.isEmpty()){
@@ -232,8 +237,9 @@ public class Player {
 		}
 		handler.getWorld().body.addLast(tail);
 		handler.getWorld().playerLocation[tail.x][tail.y] = true;
-	}
-
+	
+		}
+	
 	public void kill(){
 		lenght = 0;
 		for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {

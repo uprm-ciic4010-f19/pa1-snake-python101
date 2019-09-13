@@ -37,6 +37,9 @@ public class GameState extends State {
     public void tick() {
 
         handler.getWorld().tick();
+        if(handler.getKeyManager().pbutt) {
+        	State.setState(handler.getGame().pauseState);
+        }
 
     }
 

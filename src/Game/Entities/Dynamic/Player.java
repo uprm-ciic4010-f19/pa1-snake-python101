@@ -20,6 +20,7 @@ public class Player {
 
 	public int moveCounter;
 	public int i;
+	public int scoreScreen;
 	public String direction;//is your first name one?
 
 	public Player(Handler handler){
@@ -125,12 +126,15 @@ public class Player {
 				}
 
 			}
+			g.setColor(Color.GREEN);
+			g.drawString("Score: "+Integer.toString(scoreScreen) , handler.getWidth()/12, 20);
 		}
 
 
 	}
 
 	public void Eat(){
+		scoreScreen = (int) (scoreScreen + Math.sqrt((2*scoreScreen)+1));
 		Tail tail= null;
 		lenght ++;
 		handler.getWorld().appleLocation[xCoord][yCoord]=false;

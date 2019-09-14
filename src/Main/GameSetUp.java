@@ -16,6 +16,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.awt.event.KeyEvent;
 
 
 /**
@@ -160,6 +161,8 @@ public class GameSetUp implements Runnable {
     private void tick(){
         //checks for key types and manages them
         keyManager.tick();
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_ESCAPE))
+        	State.setState(pauseState);
 
         //game states are the menus
         if(State.getState() != null)

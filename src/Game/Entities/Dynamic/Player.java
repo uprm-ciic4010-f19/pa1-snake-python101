@@ -79,7 +79,7 @@ public class Player {
 			break;
 		case "Right":
 			if(xCoord==handler.getWorld().GridWidthHeightPixelCount-1){
-			
+				
 					xCoord = 0;
 			}else{
 				xCoord++;

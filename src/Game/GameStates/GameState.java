@@ -13,41 +13,41 @@ import java.awt.*;
  */
 public class GameState extends State {
 
-    private WorldBase world;
+	private WorldBase world;
 
-    public GameState(Handler handler){
-        super(handler);
-        world = new WorldOne(handler);
-        handler.setWorld(world);
-        handler.getWorld().player= new Player(handler);
-        for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
-            for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
+	public GameState(Handler handler){
+		super(handler);
+		world = new WorldOne(handler);
+		handler.setWorld(world);
+		handler.getWorld().player= new Player(handler);
+		for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
+			for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
 
-                handler.getWorld().playerLocation[i][j]=false;
-                handler.getWorld().appleLocation[i][j]=false;
+				handler.getWorld().playerLocation[i][j]=false;
+				handler.getWorld().appleLocation[i][j]=false;
 
-            }
-        }
-        handler.getWorld().playerLocation[handler.getWorld().player.xCoord][handler.getWorld().player.yCoord] =true;
+			}
+		}
+		handler.getWorld().playerLocation[handler.getWorld().player.xCoord][handler.getWorld().player.yCoord] =true;
 
 
-    }
+	}
 
-    @Override
-    public void tick() {
+	@Override
+	public void tick() {
 
-        handler.getWorld().tick();
-        if(handler.getKeyManager().pbutt) {
-        	State.setState(handler.getGame().pauseState);
-        }
+		handler.getWorld().tick();
+		// if(handler.getKeyManager().pbutt) {
+		//	State.setState(handler.getGame().pauseState);
+	}
 
-    }
 
-    @Override
-    public void render(Graphics g) {
 
-        handler.getWorld().render(g);
+	@Override
+	public void render(Graphics g) {
 
-    }
+		handler.getWorld().render(g);
+
+	}
 
 }

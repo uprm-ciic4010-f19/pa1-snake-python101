@@ -14,20 +14,25 @@ public class Images {
     public static BufferedImage[] butstart;
     public static BufferedImage title;
     public static BufferedImage Pause;
+    public static BufferedImage Restart[];
     public static BufferedImage[] Resume;
     public static BufferedImage[] BTitle;
     public static BufferedImage[] Options;
+    public static BufferedImage GameOverScreen;
     public static ImageIcon icon;
 
     public Images() {
-
+    	
+    	Restart = new BufferedImage[2];
         butstart = new BufferedImage[3];
         Resume = new BufferedImage[2];
         BTitle = new BufferedImage[2];
         Options = new BufferedImage[2];
 
         try {
-
+        	Restart[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Restart.png"));
+        	Restart[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Restart.png"));
+        	GameOverScreen = ImageIO.read(getClass().getResourceAsStream("/Sheets/GameOverScreen.png"));
             title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
             Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
             Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Resume.png"));

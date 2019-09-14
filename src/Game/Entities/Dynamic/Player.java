@@ -71,17 +71,15 @@ public class Player {
 		switch (direction){
 		case "Left":
 			if(xCoord==0){
-				State.setState(handler.getGame().gameOver);
-				kill();
 					xCoord = handler.getWorld().GridWidthHeightPixelCount-1;
+					
 			}else{
 				xCoord--;
 			}
 			break;
 		case "Right":
 			if(xCoord==handler.getWorld().GridWidthHeightPixelCount-1){
-				State.setState(handler.getGame().gameOver);
-				kill();
+			
 					xCoord = 0;
 			}else{
 				xCoord++;
@@ -89,8 +87,7 @@ public class Player {
 			break;
 		case "Up":
 			if(yCoord==0){
-				State.setState(handler.getGame().gameOver);
-				kill();
+				
 					yCoord = handler.getWorld().GridWidthHeightPixelCount-1;
 			}else{
 				yCoord--;
@@ -98,8 +95,7 @@ public class Player {
 			break;
 		case "Down":
 			if(yCoord==handler.getWorld().GridWidthHeightPixelCount-1){
-				State.setState(handler.getGame().gameOver);
-				kill();
+				
 					yCoord = 0;
 			}else{
 				yCoord++;
@@ -138,7 +134,16 @@ public class Player {
 		Random r = new Random();
 		for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
 			for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-				g.setColor(Color.GREEN);
+				//g.setColor(Color.GREEN);
+				if(handler.getWorld().playerLocation[i][j])
+                	g.setColor(new Color(r.nextFloat(),r.nextFloat(),r.nextFloat()));
+				
+				 if(handler.getWorld().appleLocation[i][j]){							//Sets apple color.
+	                	//g.setColor(Color.BLACK); 		For when the bad apple is implemented
+	                	g.setColor(Color.RED);						
+
+	                }
+	                
 
 				if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
 					g.fillRect((i*handler.getWorld().GridPixelsize),
